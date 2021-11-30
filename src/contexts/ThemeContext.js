@@ -1,4 +1,4 @@
-import React, { createContext, Component } from "react";
+import React, { createContext } from "react";
 
 export const ThemeContext = createContext();
 
@@ -11,7 +11,7 @@ class ThemeContextProvider extends React.Component {
     render() { 
         return (
             <ThemeContext.Provider value={{...this.state}}>
-                {thos.props.children}
+                {this.props.children}
             </ThemeContext.Provider>    
         );
     }
