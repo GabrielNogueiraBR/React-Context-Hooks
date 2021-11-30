@@ -1,5 +1,5 @@
 import BookList from "./components/BookList";
-import Navbar from "./components/NavBar";
+import Navbar from "./components/Navbar";
 import ThemeToggle from "./components/ThemeToogle";
 import AuthContextProvider from "./contexts/AuthContext";
 import ThemeContextProvider from "./contexts/ThemeContext";
