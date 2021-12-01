@@ -1,26 +1,18 @@
-import { AuthContext } from "../contexts/AuthContext";
+import { useContext } from "react";
 import { ThemeContext } from "../contexts/ThemeContext";
 
 const BookList = () => {
+    const {isLightTheme, light, dark} = useContext(ThemeContext);
+    const theme = isLightTheme? light : dark;
+
     return(
-        <AuthContext.Consumer>{(authContext) => (
-            <ThemeContext.Consumer>
-                {(themeContext)=>{
-                    const {isLightTheme, light, dark} = themeContext;
-                    const theme = isLightTheme? light : dark;
-                    return (
-                        <div className="book-list" style={{color: theme.syntax, background: theme.bg}}>
-                            <ul>
-                                <li style={{background: theme.ui}}>The way of kings</li>
-                                <li style={{background: theme.ui}}>The name of the wind</li>
-                                <li style={{background: theme.ui}}>The final empire</li>
-                            </ul>
-                        </div>
-                    )
-                }}
-            </ThemeContext.Consumer>
-        )}
-        </AuthContext.Consumer>
+        <div className="book-list" style={{color: theme.syntax, background: theme.bg}}>
+            <ul>
+                <li style={{background: theme.ui}}>The way of kings</li>
+                <li style={{background: theme.ui}}>The name of the wind</li>
+                <li style={{background: theme.ui}}>The final empire</li>
+            </ul>
+        </div>
     );
 }
 
